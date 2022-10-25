@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh"content="1.2"> <img src="zdm.png" alt="" style="width: 100px;height:120px ;">
+	<div style="margin-top: 30px;width: 300px;height: 40px;background : black;position: absolute;">
+	 	<h4 style="color:azure ;margin-top: 10px;font-weight: 200;text-align: center;position: relative;">进校</h4>
+		<h4 style="color:azure;position: relative;left: 15px;top:-43px;font-weight:100 ;">X</h4>
+	 -->
+    <title>进校</title>
+    <script>var name=prompt('请输入名字')
+    </script>
+   <script>var id=prompt('请输入学号')</script>
+</head>
+<body>
+	<div style="text-align: center;"> <img src="1666507951191.png" alt="" style="width: 400px;"></div>
+    <div><h1 style="text-align: center;font-weight: 400;">进校</h1></div>
+    <div style="text-align:center; border-bottom: solid 1px lightgray;">
+    <h5 style="text-align: center; margin:0px ; font-weight: 400;"> <script>document.write(name)</script>-<script>;document.write(id)</script></h5></div>
+    <h2 style="text-align: center;margin-top:45px ;font-weight: 500;font-size: 35px;">白名单验证通过</h2>
+<h1></h1> 
+
+<div style="text-align: center;">
+
+<div id="watch" style="color:red ;font-size: 30px;margin-top:0;">
+ 
+</div>
+
+           <script>
+            (function(){
+                // 1. 获取id是watch的div元素
+                var watch = document.getElementById('watch');
+     
+                // 2. 补0函数：如果是个位数的话在前面填个0
+                function addZero(t){
+                    return t < 10 ? '0' + t : t;
+                }
+     
+                // 3. 毫秒格式化成两位数
+                function format(t){
+                    // 顺便补0了
+                    return t > 99 ? parseInt(t / 10) : t < 10 ? '0' + t : t;
+                }
+     
+                // 4. 首先获取当前日期和时间的函数
+                function getDateTime(){
+                    // 1) 创建date对象
+                    var date = new Date();
+                    // 2) 创建时间time对象，精确到毫秒，并对个位数调用补0函数
+                    var time = {
+                        y : date.getFullYear(),
+                        m : addZero(date.getMonth() + 1),
+                        d : addZero(date.getDate()),
+                        h : addZero(date.getHours()),
+                        i : addZero(date.getMinutes()),
+                        s : addZero(date.getSeconds()),
+                        hs : format(date.getMilliseconds())
+                    }
+                    // 3) 设置元素中的文本内容
+                    watch.innerHTML = ' ' + time.h + ':' + time.i + ':' + time.s + ':' + time.hs;
+     
+                }
+                // 5. 调用函数
+                getDateTime();
+                // 6. 定时器动态更新
+                setInterval(getDateTime,1);
+            })();
+        </script>
+
+
+<div>
+     <img src="1664274027097.png" alt="" style="margin-top:15px">
+</div>
+</body>
+
+
